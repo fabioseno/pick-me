@@ -1,0 +1,54 @@
+span.register, a.login {
+    text-align: center;
+    display: block;
+}
+
+
+/* Friends */
+.friend-list .item-divider {
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.friend-list .item {
+    padding-top: 11px;
+    padding-bottom: 7px;
+}
+
+.friend-list .item h2 {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.friend-list .item p {
+    font-size: 0.8em;
+}
+
+.friend-list .item-avatar {
+    padding-left: 57px;
+    min-height: initial;
+}
+
+.friend-list .item-avatar > img:first-child {
+    border-radius: 0;
+    top: 9px;
+    left: 9px;
+}
+
+.friend-list .item-button-right > .button {
+    top: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 5px;
+    min-height: initial;
+    line-height: initial;
+}
+
+/* Event Photos */
+.photo .item img {
+    width: 100%;
+}
+
+.photo p {
+    font-size: 14px;
+}

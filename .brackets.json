@@ -1,0 +1,9 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/seno/projects/pick-me/pick-me/www/lib/ionic-contrib-tinder-cards/example/www/lib/js/angular-ui/angular-ui-router.min.js",
+        "/Users/seno/projects/pick-me/pick-me/www/lib/ionic-contrib-tinder-cards/ionic.tdcards.js",
+        "/Users/seno/projects/pick-me/pick-me/www/lib/ionic-contrib-tinder-cards/example/www/lib/js/ionic.min.js",
+        "/Users/seno/projects/pick-me/pick-me/www/lib/ionic-contrib-tinder-cards/example/www/lib/js/ionic.js",
+        "/Users/seno/projects/pick-me/pick-me/www/lib/ionic-contrib-tinder-cards/example/www/lib/js/ionic.bundle.min.js"
+    ]
+}
