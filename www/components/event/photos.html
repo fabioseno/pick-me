@@ -9,13 +9,18 @@
         </div>
     </ion-header-bar>
     <ion-content>
-        <div class="list card photo">
+        <div class="list card photo" data-ng-repeat="photo in vm.photos">
             <div class="item item-body item-text-wrap">
-                <img src="http://ionicframework.com/img/docs/delorean.jpg">
-                <p>Descrição da foto</p>
-                <p>by: fabioseno on 15/05/2015</p>
+                <img data-ng-src="{{ photo.photo }}">
+                <span data-ng-bind="photo.description"></span>
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                    fabioseno
+                </a>
+                <a class="tab-item" href="#">
+                    8 days ago
+                </a>
                 <a class="tab-item" href="#" data-ng-show="false">
                     <i class="icon ion-thumbsup"></i>
                     Like
@@ -30,47 +35,8 @@
                 </a>
             </div>
         </div>
-        <div class="list card photo">
-            <div class="item item-body item-text-wrap">
-                <img src="http://ionicframework.com/img/docs/delorean.jpg">
-                <p>Descrição da foto</p>
-                <p>by: fabioseno on 15/05/2015</p>
-            </div>
-            <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item" href="#" data-ng-show="false">
-                    <i class="icon ion-thumbsup"></i>
-                    Like
-                </a>
-                <a class="tab-item" href="#" data-ng-show="false">
-                    <i class="icon ion-chatbox"></i>
-                    Comment
-                </a>
-                <a class="tab-item" href="#">
-                    <i class="icon ion-star"></i>
-                    Favorite
-                </a>
-            </div>
-        </div>
-        <div class="list card photo">
-            <div class="item item-body item-text-wrap">
-                <img src="http://ionicframework.com/img/docs/delorean.jpg">
-                <p>Descrição da foto</p>
-                <p>by: fabioseno on 15/05/2015</p>
-            </div>
-            <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item" href="#" data-ng-show="false">
-                    <i class="icon ion-thumbsup"></i>
-                    Like
-                </a>
-                <a class="tab-item" href="#" data-ng-show="false">
-                    <i class="icon ion-chatbox"></i>
-                    Comment
-                </a>
-                <a class="tab-item" href="#">
-                    <i class="icon ion-star"></i>
-                    Favorite
-                </a>
-            </div>
-        </div>
+
+        <ion-infinite-scroll on-infinite="vm.loadMorePhotos()" distance="10%">
+        </ion-infinite-scroll>
     </ion-content>
 </ion-view>

@@ -5,27 +5,21 @@
         </div>
         <h1 class="title">Eventos</h1>
     </ion-header-bar>
-    <ion-content>
-        <div class="list card photo">
-            <div class="item item-body item-text-wrap">
-                <img src="http://ionicframework.com/img/docs/delorean.jpg">
-                <p>Descrição da foto</p>
-                <p>by: fabioseno on 15/05/2015</p>
-            </div>
-            <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item" href="#" data-ng-show="false">
-                    <i class="icon ion-thumbsup"></i>
-                    Like
-                </a>
-                <a class="tab-item" href="#" data-ng-show="false">
-                    <i class="icon ion-chatbox"></i>
-                    Comment
-                </a>
-                <a class="tab-item" href="#">
-                    <i class="icon ion-star"></i>
-                    Favorite
-                </a>
-            </div>
-        </div>
+    <ion-content scroll="false">
+        <td-cards>
+            <td-card class="card" data-ng-repeat="photo in vm.photos" 
+                     on-transition-left="vm.transitionLeft(photo)"
+                     on-transition-right="vm.transitionRight(photo)"
+                     on-destroy="vm.cardDestroyed($index)"
+                     >
+                
+                <div class="item image">
+                    <div class="no-text overlayBox"><div class="noBox boxed">Não</div></div>
+                    <img ng-src="{{photo.photo}}">
+                    <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Sim</div></div>
+                </div>
+                <div class="item item-body item-text-wrap" data-ng-bind="photo.description"></div>
+            </td-card>
+        </td-cards>
     </ion-content>
 </ion-view>

@@ -1,7 +1,8 @@
-angular.module('pick-me', ['ionic', 'ui.router', 'starter.controllers', 'starter.services', 'ionic.contrib.ui.tinderCards'])
+/*global angular, cordova, StatusBar*/
+angular.module('pick-me', ['ionic', 'ui.router', 'wt-core', 'starter.controllers', 'starter.services', 'ionic.contrib.ui.tinderCards']).run(function ($ionicPlatform, invoker, appConfig) {
+    'use strict';
 
-    .run(function($ionicPlatform) {
-    $ionicPlatform.ready(function() {
+    $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
         if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -12,7 +13,11 @@ angular.module('pick-me', ['ionic', 'ui.router', 'starter.controllers', 'starter
             StatusBar.styleLightContent();
         }
     });
-}).config(function($stateProvider, $urlRouterProvider) {
+    
+    invoker.setConfiguration(appConfig);
+    
+}).config(function ($stateProvider, $urlRouterProvider) {
+    'use strict';
 
     $stateProvider.state('login', {
         url: '/login',
